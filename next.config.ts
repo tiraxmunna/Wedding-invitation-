@@ -4,11 +4,15 @@ import type { NextConfig } from "next";
 // static HTML/CSS/JS and configures the repository subpath for GitHub Pages.
 const isGithubPages = process.env.GITHUB_PAGES === "true";
 const repoName = "Wedding-invitation-";
+const basePath = isGithubPages ? `/${repoName}` : "";
 
 const nextConfig: NextConfig = {
   output: isGithubPages ? "export" : undefined,
-  basePath: isGithubPages ? `/${repoName}` : "",
-  assetPrefix: isGithubPages ? `/${repoName}/` : undefined,
+  basePath: basePath || undefined,
+  assetPrefix: basePath ? `${basePath}/` : undefined,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   images: {
     unoptimized: true,
   },

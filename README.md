@@ -1,5 +1,9 @@
 # Modern Heirloom — Editorial Wedding Invitation Template
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tiraxmunna/Wedding-invitation-/main/public/images/hero.jpg" alt="Modern Heirloom Wedding Invitation Preview" width="600" style="border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);" />
+</p>
+
 [![Live Demo](https://img.shields.io/badge/Demo-Live_Preview-202A24?style=flat-square&logo=github)](https://tiraxmunna.github.io/Wedding-invitation-/)
 [![Next.js](https://img.shields.io/badge/Next.js-16.4-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.3-202A24?style=flat-square&logo=react)](https://react.dev/)

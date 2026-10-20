@@ -5,6 +5,7 @@ import { ArrowDown, Calendar, MapPin, Heart } from "lucide-react";
 import { weddingConfig } from "@/config/wedding";
 import WeddingLogo from "./wedding-logo";
 import PersonalizedGuestBanner from "./personalized-guest-banner";
+import { getAssetPath } from "@/lib/asset-path";
 
 export default function HeroInvitation() {
   const { couple, event } = weddingConfig;
@@ -108,7 +109,7 @@ export default function HeroInvitation() {
                 {/* Archway Image Silhouette */}
                 <div className="relative aspect-[3/4] w-full overflow-hidden heirloom-arch bg-[#DCE1D5] shadow-inner">
                   <Image
-                    src="/images/hero.jpg"
+                    src={getAssetPath("/images/hero.jpg")}
                     alt={`Wedding portrait of ${couple.combinedNames}`}
                     fill
                     priority

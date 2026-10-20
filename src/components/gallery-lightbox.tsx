@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { GalleryPhoto } from "@/lib/types";
+import { getAssetPath } from "@/lib/asset-path";
 
 interface GalleryLightboxProps {
   photos: GalleryPhoto[];
@@ -99,7 +100,7 @@ export default function GalleryLightbox({
       >
         <div className="relative w-full h-[60vh] sm:h-[72vh] rounded-xs overflow-hidden bg-black/40">
           <Image
-            src={currentPhoto.src}
+            src={getAssetPath(currentPhoto.src)}
             alt={currentPhoto.alt}
             fill
             sizes="(max-width: 1200px) 90vw, 1000px"

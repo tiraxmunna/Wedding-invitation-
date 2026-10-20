@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { weddingConfig } from "@/config/wedding";
+import { getAssetPath } from "@/lib/asset-path";
 
 export default function CoupleStory() {
   const { story } = weddingConfig;
@@ -33,7 +34,7 @@ export default function CoupleStory() {
               <div className="absolute -inset-2 border border-[#A88753]/40 rounded-xs transform rotate-1 hidden sm:block pointer-events-none" />
               <div className="relative aspect-[4/5] rounded-xs overflow-hidden bg-[#FFFEFA] p-2.5 border border-[#DCD8CD] shadow-sm">
                 <Image
-                  src="/images/story.jpg"
+                  src={getAssetPath("/images/story.jpg")}
                   alt={`Couple photo of ${weddingConfig.couple.combinedNames}`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 420px"

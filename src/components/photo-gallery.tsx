@@ -5,6 +5,7 @@ import Image from "next/image";
 import { weddingConfig } from "@/config/wedding";
 import GalleryLightbox from "./gallery-lightbox";
 import { Maximize2, Camera } from "lucide-react";
+import { getAssetPath } from "@/lib/asset-path";
 
 export default function PhotoGallery() {
   const { gallery } = weddingConfig;
@@ -88,7 +89,7 @@ export default function PhotoGallery() {
               >
                 <div className={`relative w-full ${aspectClass} overflow-hidden rounded-xs`}>
                   <Image
-                    src={photo.src}
+                    src={getAssetPath(photo.src)}
                     alt={photo.alt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
