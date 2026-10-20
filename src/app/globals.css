@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+:root {
+  --color-paper: #F7F4EC;
+  --color-surface: #FFFEFA;
+  --color-ink: #202A24;
+  --color-olive: #737F68;
+  --color-sage: #DCE1D5;
+  --color-brass: #A88753;
+  --color-brass-hover: #917242;
+  --color-body: #545A52;
+  --color-border: #DCD8CD;
+  --color-border-subtle: #ECE8DD;
+}
+
+@theme {
+  --color-paper: var(--color-paper);
+  --color-surface: var(--color-surface);
+  --color-ink: var(--color-ink);
+  --color-olive: var(--color-olive);
+  --color-sage: var(--color-sage);
+  --color-brass: var(--color-brass);
+  --color-brass-hover: var(--color-brass-hover);
+  --color-body: var(--color-body);
+  --color-border: var(--color-border);
+  --color-border-subtle: var(--color-border-subtle);
+
+  --font-serif: var(--font-playfair), var(--font-cormorant), "Playfair Display", "Cormorant Garamond", "Didot", "Georgia", serif;
+  --font-sans: var(--font-inter), "Inter", "Plus Jakarta Sans", "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-paper);
+  color: var(--color-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings font */
+h1, h2, h3, h4, .font-editorial {
+  font-family: var(--font-serif);
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+
+/* Accessibility: focus ring styles */
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+}
+
+/* Skip link */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--color-ink);
+  color: var(--color-surface);
+  padding: 0.75rem 1.5rem;
+  z-index: 100;
+  transition: top 0.2s ease-in-out;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.skip-to-content:focus {
+  top: 1rem;
+}
+
+/* Section scroll margin offset for sticky header */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Delicate monogram border effect */
+.monogram-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-brass);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Subtle botanical motif pattern */
+.botanical-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.botanical-divider::before,
+.botanical-divider::after {
+  content: "";
+  height: 1px;
+  width: 4rem;
+  background-color: var(--color-border);
+}
+
+/* Luxury Editorial Heirloom Borders & Framing */
+.heirloom-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 20px -2px rgba(32, 42, 36, 0.05), 0 1px 3px rgba(32, 42, 36, 0.03);
+  position: relative;
+}
+
+.heirloom-card-inner-border {
+  position: relative;
+}
+.heirloom-card-inner-border::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(168, 135, 83, 0.25);
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+/* Heritage Arch Shape */
+.heirloom-arch {
+  border-radius: 9999px 9999px 4px 4px;
+}
+
+/* Gold foil text shimmer */
+.gold-foil-text {
+  background: linear-gradient(135deg, #A88753 0%, #C5A874 50%, #876735 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ornate corner flourishes */
+.corner-flourish {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: #A88753;
+  pointer-events: none;
+}
+.corner-tl { top: 8px; left: 8px; border-top: 1.5px solid #A88753; border-left: 1.5px solid #A88753; }
+.corner-tr { top: 8px; right: 8px; border-top: 1.5px solid #A88753; border-right: 1.5px solid #A88753; }
+.corner-bl { bottom: 8px; left: 8px; border-bottom: 1.5px solid #A88753; border-left: 1.5px solid #A88753; }
+.corner-br { bottom: 8px; right: 8px; border-bottom: 1.5px solid #A88753; border-right: 1.5px solid #A88753; }

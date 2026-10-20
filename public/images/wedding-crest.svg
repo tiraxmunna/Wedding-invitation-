@@ -1,0 +1,27 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#C5A874" />
+      <stop offset="50%" stopColor="#A88753" />
+      <stop offset="100%" stopColor="#876735" />
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="46" stroke="url(#goldGradient)" stroke-width="1.2" stroke-dasharray="3 2" />
+  <circle cx="50" cy="50" r="41" stroke="url(#goldGradient)" stroke-width="0.8" />
+  <path d="M50 4 C48 9, 44 12, 40 13 C45 13, 48 11, 50 16 C52 11, 55 13, 60 13 C56 12, 52 9, 50 4 Z" fill="url(#goldGradient)" />
+  <path d="M50 96 C48 91, 44 88, 40 87 C45 87, 48 89, 50 84 C52 89, 55 87, 60 87 C56 88, 52 91, 50 96 Z" fill="url(#goldGradient)" />
+  <path d="M17 50 C17 32, 28 18, 43 14" stroke="url(#goldGradient)" stroke-width="1" stroke-linecap="round" />
+  <circle cx="21" cy="33" r="2.2" fill="url(#goldGradient)" />
+  <circle cx="16" cy="45" r="2.2" fill="url(#goldGradient)" />
+  <circle cx="23" cy="24" r="1.8" fill="url(#goldGradient)" />
+  <circle cx="33" cy="17" r="1.8" fill="url(#goldGradient)" />
+  <path d="M83 50 C83 32, 72 18, 57 14" stroke="url(#goldGradient)" stroke-width="1" stroke-linecap="round" />
+  <circle cx="79" cy="33" r="2.2" fill="url(#goldGradient)" />
+  <circle cx="84" cy="45" r="2.2" fill="url(#goldGradient)" />
+  <circle cx="77" cy="24" r="1.8" fill="url(#goldGradient)" />
+  <circle cx="67" cy="17" r="1.8" fill="url(#goldGradient)" />
+  <text x="38" y="56" text-anchor="middle" font-family="Georgia, serif" font-size="24" font-weight="400" fill="url(#goldGradient)">M</text>
+  <text x="50" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-style="italic" font-weight="300" fill="#737F68">&amp;</text>
+  <text x="62" y="56" text-anchor="middle" font-family="Georgia, serif" font-size="24" font-weight="400" fill="url(#goldGradient)">A</text>
+  <text x="50" y="72" text-anchor="middle" font-family="sans-serif" font-size="6.5" font-weight="500" letter-spacing="0.28em" fill="#737F68">2027</text>
+</svg>
