@@ -1,78 +1,106 @@
-# 🕊️ Modern Heirloom — Bespoke Wedding Invitation
+# Modern Heirloom — Editorial Wedding Invitation Template
 
-<p align="center">
-  <img src="public/images/hero.jpg" alt="Modern Heirloom Wedding Invitation" width="560" style="border-radius: 6px; box-shadow: 0 12px 36px rgba(0,0,0,0.12);" />
-</p>
+[![Live Demo](https://img.shields.io/badge/Demo-Live_Preview-202A24?style=flat-square&logo=github)](https://tiraxmunna.github.io/Wedding-invitation-/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.4-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.3-202A24?style=flat-square&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-202A24?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-202A24?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-202A24?style=flat-square)](LICENSE)
 
-<p align="center">
-  <strong>An art-directed, editorial digital wedding invitation & guest RSVP microsite.</strong><br />
-  Crafted with Next.js App Router, React 19, TypeScript & Tailwind CSS.
-</p>
-
-<p align="center">
-  <a href="https://tiraxmunna.github.io/Wedding-invitation-/">
-    <img src="https://img.shields.io/badge/🌐_Live_Preview-GitHub_Pages-A88753?style=for-the-badge&logoColor=white" alt="Live Preview" />
-  </a>
-  <a href="#-features">
-    <img src="https://img.shields.io/badge/Next.js-16.4-black?style=for-the-badge&logo=next.js" alt="Next.js" />
-  </a>
-  <a href="#-features">
-    <img src="https://img.shields.io/badge/Tailwind_v4-38B2AC?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" />
-  </a>
-  <a href="#license">
-    <img src="https://img.shields.io/badge/License-MIT-202A24?style=for-the-badge" alt="License" />
-  </a>
-</p>
+An art-directed, editorial digital wedding invitation and RSVP microsite designed for modern couples. Built with Next.js App Router, React 19, TypeScript, and Tailwind CSS.
 
 ---
 
-## 🌟 Live Preview
+## Live Demonstration
 
-Experience the live interactive invitation deployed on GitHub Pages:
+Experience the interactive invitation and guest flow:
 
-👉 **[https://tiraxmunna.github.io/Wedding-invitation-/](https://tiraxmunna.github.io/Wedding-invitation-/)**
-
-> 💡 **Try Personalized Guest Links:**
-> [Open with personalized greeting & pre-filled RSVP](https://tiraxmunna.github.io/Wedding-invitation-/?to=Alexander%20Hamilton&party=2) (`?to=Alexander%20Hamilton&party=2`).
+* **Live Website**: [https://tiraxmunna.github.io/Wedding-invitation-/](https://tiraxmunna.github.io/Wedding-invitation-/)
+* **Personalized Guest Demo**: [Open with guest greeting & prefilled RSVP](https://tiraxmunna.github.io/Wedding-invitation-/?to=Eleanor%20Vance&party=2) (`?to=Eleanor%20Vance&party=2`)
 
 ---
 
-## ✨ Why It’s Unique & Fantastic
+## Architectural Highlights
 
-* 🎨 **Modern Heirloom Stationery**: Warm natural paper (`#F7F4EC`), deep ink typography (`#202A24`), double-line gold hairline frames, and ornate corner flourishes.
-* 🕊️ **Dynamic SVG Crest**: The monogram automatically updates initials and year when couple names change in config.
-* 👤 **Personalized Guest Links**: Pass `?to=GuestName&party=2` to show a personal greeting in the hero and pre-fill their RSVP.
-* 📅 **One-Tap Calendar Sync**: Instant `.ics` file download (Apple / Outlook) and Google Calendar sync for every event.
-* 📍 **Interactive Map & Virtual Stream**: Embedded Google Map for easy navigation, plus a live-stream banner for remote guests.
-* 🎶 **Ambient Audio Player**: Subtle, non-intrusive background ceremonial melody with volume wave animations.
-* 📝 **Dual-Mode RSVP & Submissions Drawer**:
-  * **Demo Mode**: Stores responses in browser `localStorage`. Review, export as JSON, or clear submissions via the built-in inspector drawer.
-  * **API Mode**: Seamlessly submits to any REST backend, Google Sheet, or database.
-* 🖼️ **Editorial Lightbox Gallery**: Full keyboard (`Esc`, `←`, `→`) and touch-accessible photo lightbox.
+* **Single-File Content Configuration**: All couple details, events, venues, attire palettes, FAQs, and RSVP rules are defined in [`src/config/wedding.ts`](src/config/wedding.ts). Personalize the entire site without touching React components.
+* **Dynamic Monogram & SVG Crest**: The vector crest automatically derives couple initials and the wedding year from configuration.
+* **Personalized Guest Routing**: Query parameters (`?to=Name&party=Seats`) display a bespoke greeting in the hero and pre-fill guest details on the RSVP form.
+* **Universal Calendar Integration**: Generates RFC-5545 compliant `.ics` calendar files (Apple Calendar, Outlook) and one-click Google Calendar URLs.
+* **Dual-Mode RSVP System**:
+  * **Demonstration Mode**: Persists responses in browser `localStorage`. Includes a built-in submissions drawer on the confirmation screen to inspect entries, export JSON, or clear test data.
+  * **Production Mode**: Submits sanitized JSON payloads to any REST API endpoint or serverless webhook.
+* **Interactive Venue Navigation**: Responsive Google Maps integration with one-click address copying and optional live-stream broadcast links.
+* **Ambient Audio Player**: Subtle ceremonial music control respecting browser autoplay standards.
+* **Accessibility**: WCAG 2.1 AA compliant contrast ratios, full keyboard navigation for dialogs and accordions, and `prefers-reduced-motion` support.
 
 ---
 
-## ⚡ 30-Second Quickstart
+## Repository Structure
+
+```
+wedding-invitation/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          # Automated GitHub Pages CI/CD workflow
+├── public/
+│   ├── images/                 # Replaceable wedding photography & crest
+│   └── .nojekyll               # Ensures GitHub Pages serves Next.js assets
+├── src/
+│   ├── app/
+│   │   ├── globals.css         # Heirloom design tokens & typography
+│   │   ├── layout.tsx          # Root layout & ambient music mount
+│   │   ├── page.tsx            # Main invitation single-page layout
+│   │   ├── privacy/            # Privacy notice & storage disclosure
+│   │   └── rsvp/               # Dedicated RSVP response page
+│   ├── components/             # Reusable UI sections & interactive modules
+│   ├── config/
+│   │   └── wedding.ts          # Central configuration file
+│   └── lib/                    # Calendar, validation, and storage utilities
+├── next.config.ts              # Next.js build & export configuration
+├── package.json
+└── tsconfig.json
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+* Node.js `18.18+` or `20+` (Node `22+` recommended)
+* npm, pnpm, or yarn
+
+### Installation
 
 ```bash
-# 1. Clone repository
+# Clone the repository
 git clone https://github.com/tiraxmunna/Wedding-invitation-.git
 cd Wedding-invitation-
 
-# 2. Install dependencies
+# Install dependencies
 npm install
 
-# 3. Start local development server
+# Start development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view your invitation.
+Visit `http://localhost:3000` in your browser.
+
+### Production Build
+
+```bash
+# Type check and build
+npm run build
+
+# Preview build locally
+npm start
+```
 
 ---
 
-## 🎯 Personalize in 1 File
+## Customization Guide
 
-Everything is customized from a single file: **[`src/config/wedding.ts`](src/config/wedding.ts)**
+To personalize this website for your celebration, edit **[`src/config/wedding.ts`](src/config/wedding.ts)**:
 
 ```typescript
 export const weddingConfig: WeddingConfig = {
@@ -81,39 +109,67 @@ export const weddingConfig: WeddingConfig = {
     partnerOne: "Mira",
     partnerTwo: "Arman",
     combinedNames: "Mira & Arman",
+    monogram: "M & A",
     eyebrow: "Together with our families",
     invitationLine: "Invite you to celebrate their union and marriage",
   },
   event: {
     mainDateIso: "2027-12-12T17:00:00+05:30",
     dateFormatted: "Sunday, 12 December 2027",
+    timeFormatted: "5:00 PM onwards",
     city: "Hyderabad",
     country: "India",
+    timezone: "Asia/Kolkata",
+    virtualAttendanceUrl: "https://youtube.com/live/your-broadcast", // Optional
   },
   venue: {
     name: "The Garden Courtyard",
     address: "14 Jubilee Enclave, Hitec City Road",
-    mapsUrl: "https://maps.google.com/...",
+    cityStateZip: "Hyderabad, Telangana 500081",
+    mapsUrl: "https://maps.google.com/?q=...",
+    embedMapUrl: "https://www.google.com/maps/embed?pb=...",
   },
-  // Toggle any section: story, schedule, gallery, attire, travel, faq, gifts, rsvp, music
+  // Sections can be individually toggled:
+  story: { enabled: true, ... },
+  schedule: { enabled: true, ... },
+  gallery: { enabled: true, ... },
+  dressGuidance: { enabled: true, ... },
+  travel: { enabled: true, ... },
+  faq: { enabled: true, ... },
+  gifts: { enabled: true, ... },
+  music: { enabled: true, ... },
+  rsvp: { enabled: true, ... },
 };
 ```
 
 ---
 
-## 🚀 GitHub Pages Live Preview Setup
+## Deploying to GitHub Pages
 
-This repository includes a pre-configured automated GitHub Actions workflow (`.github/workflows/deploy.yml`).
+This project is pre-configured to automatically build and deploy via **GitHub Actions**.
 
-To enable the live site on GitHub:
-1. Go to your repository on GitHub: **Settings → Pages**.
-2. Under **Build and deployment > Source**, select **GitHub Actions**.
-3. Push to `main` — GitHub will automatically build and publish your site at:
+### Enabling Live Deployment in Your Repository
+
+1. Open your repository on GitHub and navigate to:  
+   **Settings → Pages** ([direct link](https://github.com/tiraxmunna/Wedding-invitation-/settings/pages))
+2. Under **Build and deployment > Source**, select **GitHub Actions** from the dropdown menu (instead of *"Deploy from a branch"*).
+3. The included workflow (`.github/workflows/deploy.yml`) will automatically compile the Next.js static export and deploy the live website to:  
    `https://<your-username>.github.io/Wedding-invitation-/`
+
+> **Note on Custom Domains**: If using a custom domain (e.g. `wedding.yourdomain.com`), enter your domain in **Settings → Pages → Custom domain**, and set `basePath: ""` in [`next.config.ts`](next.config.ts).
 
 ---
 
-## 📄 License
+## Deploying to Vercel or Netlify
 
-Open-source and freely available under the **MIT License**.
-Crafted with timeless elegance.
+This application deploys out-of-the-box to Vercel or Netlify with zero configuration:
+
+1. Import the repository into your [Vercel](https://vercel.com) or [Netlify](https://netlify.com) dashboard.
+2. If connecting a live RSVP backend, add the environment variable `NEXT_PUBLIC_RSVP_ENDPOINT`.
+3. Click **Deploy**.
+
+---
+
+## License
+
+Distributed under the [MIT License](LICENSE).
