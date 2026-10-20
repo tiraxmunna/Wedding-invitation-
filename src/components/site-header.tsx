@@ -46,15 +46,15 @@ export default function SiteHeader() {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { href: "/#home", label: "Home" },
-    weddingConfig.story.enabled && { href: "/#story", label: "Our Story" },
-    weddingConfig.schedule.enabled && { href: "/#schedule", label: "Celebration" },
-    { href: "/#venue", label: "Venue" },
-    weddingConfig.gallery.enabled && { href: "/#gallery", label: "Gallery" },
-    weddingConfig.dressGuidance.enabled && { href: "/#attire", label: "Attire" },
-    weddingConfig.travel.enabled && { href: "/#travel", label: "Travel" },
-    weddingConfig.faq.enabled && { href: "/#faq", label: "FAQ" },
-  ].filter(Boolean) as { href: string; label: string }[];
+    { id: "home", label: "Home" },
+    weddingConfig.story.enabled && { id: "story", label: "Our Story" },
+    weddingConfig.schedule.enabled && { id: "schedule", label: "Celebration" },
+    { id: "venue", label: "Venue" },
+    weddingConfig.gallery.enabled && { id: "gallery", label: "Gallery" },
+    weddingConfig.dressGuidance.enabled && { id: "attire", label: "Attire" },
+    weddingConfig.travel.enabled && { id: "travel", label: "Travel" },
+    weddingConfig.faq.enabled && { id: "faq", label: "FAQ" },
+  ].filter(Boolean) as { id: string; label: string }[];
 
   const handleLinkClick = () => {
     setMobileMenuOpen(false);
@@ -94,8 +94,8 @@ export default function SiteHeader() {
           {isHomePage ? (
             navLinks.map((link) => (
               <a
-                key={link.href}
-                href={link.href}
+                key={link.id}
+                href={`#${link.id}`}
                 className="hover:text-[#202A24] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#A88753] hover:after:w-full after:transition-all"
               >
                 {link.label}
@@ -179,8 +179,8 @@ export default function SiteHeader() {
               {isHomePage ? (
                 navLinks.map((link) => (
                   <a
-                    key={link.href}
-                    href={link.href}
+                    key={link.id}
+                    href={`#${link.id}`}
                     onClick={handleLinkClick}
                     className="py-2 text-base font-medium text-[#202A24] hover:text-[#A88753] transition-colors border-b border-[#ECE8DD]"
                   >
